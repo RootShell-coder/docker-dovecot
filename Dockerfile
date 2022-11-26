@@ -11,7 +11,7 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
     && apt update && apt upgrade -y \
     && apt install dovecot-lmtpd dovecot-managesieved \
-    dovecot-sieve dovecot-pgsql dovecot-imapd dovecot-pop3d dovecot-antispam rspamd openssl sudo -y \
+    dovecot-sieve dovecot-pgsql dovecot-imapd dovecot-pop3d dovecot-antispam openssl sudo -y \
     && apt autoremove \
     && usermod -aG dovecot ${USERNAME} \
     && echo ${USERNAME} "ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
